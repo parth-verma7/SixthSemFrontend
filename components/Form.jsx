@@ -1,8 +1,9 @@
 import Link from "next/link";
 
+
 const Form = ({ type, post, setpost, submitting, handleSubmit }) => {
   return (
-    <section className='w-full max-w-full flex-start flex-col'>
+    <section className='w-full max-w-full flex flex-col justify-center items-center'>
       <h1 className='head_text text-left'>
         <span className='blue_gradient'>{type} Post</span>
       </h1>

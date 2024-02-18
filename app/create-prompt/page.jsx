@@ -39,13 +39,21 @@ const CreatePrompt = () => {
         }
     }
   return (
+    <>
+    {session?.user ? ( // If session.user exists
     <Form 
-      type="Create"
-       post={post}
-       setpost={setpost}
-       submitting={setsubmitting}
-       handleSubmit={createPrompt}
+        type="Create"
+        post={post}
+        setpost={setpost}
+        submitting={setsubmitting}
+        handleSubmit={createPrompt}
     />
+) : ( // If session.user does not exist
+    <h1 className='text-3xl'><strong>sign in to view this page</strong></h1>
+)}
+
+    </>
+    
   )
 }
 

@@ -1,5 +1,5 @@
  import Feed from '../components/Feed';
- 
+ import MainCard from '../components/Maincard';
  
 
 const Home = () => {
@@ -15,6 +15,7 @@ const Home = () => {
           world to discover, create and share creative prompts.
         </p>
         <Feed/>
+       
     </section>
   )
 }

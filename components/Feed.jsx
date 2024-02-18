@@ -1,9 +1,11 @@
 "use client"
 import React, { useState,useEffect } from 'react'
 import PromptCard from './PromptCard'
+import {useSession} from 'next-auth/react'
 
 
 const PromptCardList = ({ data, handleTagClick }) => {
+  
   return (
     <div className='mt-16 prompt_layout'>
       {data.map((post) => (
@@ -77,31 +79,36 @@ const Feed = () => {
 
 
 
-
+  const {data:session} = useSession();
 
   return (
-    <section className='feed'>
-      <form className='relative w-full flex-center'>
-        <input
-          type='text'
-          placeholder='Search for a tag or a username'
-          value={searchText}
-          onChange={handleSearchChange}
-          required
-          className='search_input peer'
-        />
-      </form>
-
-      All Prompts
-      {searchText ? (
-        <PromptCardList
-          data={searchedResults}
-          handleTagClick={handleTagClick}
-        />
-      ) : (
-        <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
-      )}
-    </section>
+    <>
+    {session?.user ? (
+       <section className='feed'>
+       <form className='relative w-full flex-center'>
+         <input
+           type='text'
+           placeholder='Search for a tag or a username'
+           value={searchText}
+           onChange={handleSearchChange}
+           required
+           className='search_input peer'
+         />
+       </form>
+ 
+       All Prompts
+       {/* {searchText ? (
+         <PromptCardList
+           data={searchedResults}
+           handleTagClick={handleTagClick}
+         />
+       ) : (
+         <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
+       )} */}
+     </section>
+    ): (<></>)}
+    </>
+   
   )
 }
 
