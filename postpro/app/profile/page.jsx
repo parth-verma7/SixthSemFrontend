@@ -1,8 +1,6 @@
 'use client'
 // pages/profile.jsx
 import React, { useEffect, useState } from 'react';
-import Link from "@node_modules/next/link";
-import Image from "@node_modules/next/image";
 
 const Profile = () => {
     return (

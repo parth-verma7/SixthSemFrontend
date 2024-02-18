@@ -1,3 +1,4 @@
+import Feed from "@components/Feed";
 
 const Home = () => (
     <section className='w-full flex-center flex-col'>
@@ -10,7 +11,7 @@ const Home = () => (
         PostPro is an open-source AI post generating tool for modern world to
         discover, create and share creative posts
       </p>
-      {/* <Feed/> */}
+      <Feed/>
 
     </section>
   );

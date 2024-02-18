@@ -20,7 +20,7 @@ const Nav = () => {
   // }, []);
 
   return (
-    <nav className='flex-between w-full mb-8 pt-3'>
+    <nav className='flex-between w-full mb-8 pt-3 sticky top-0'>
       <Link href='/' className='flex gap-2 flex-center'>
         <Image
           src='/assets/images/logo.svg'
@@ -35,12 +35,12 @@ const Nav = () => {
       {/* Desktop Navigation */}
       <div className='sm:flex hidden'>
         {/* {session?.user ? ( */}
-          <div className='flex gap-3 md:gap-5'>
+          {/* <div className='flex gap-3 md:gap-5'>
             <Link href='/create-prompt' className='black_btn'>
               Create Post
             </Link>
 
-            {/* <button type='button' onClick={signOut} className='outline_btn'> */}
+            <button type='button' onClick={signOut} className='outline_btn'></button>
             <button type='button' className='outline_btn'>
               Sign Out
             </button>
@@ -56,33 +56,34 @@ const Nav = () => {
                       alt='profile'
                   />
               </Link>
-          </div>
-        {/* ) : (
+          </div> */}
+        {/* ) : ( */}
           <>
-            {providers &&
-              Object.values(providers).map((provider) => (
+            {/* {providers &&
+              Object.values(providers).map((provider) => ( */}
                 <button
                   type='button'
-                  key={provider.name}
-                  onClick={() => {
-                    signIn(provider.id);
-                  }}
+                  // key={provider.name}
+                  // onClick={() => {
+                  //   signIn(provider.id);
+                  // }}
                   className='black_btn'
                 >
                   Sign in
                 </button>
-              ))}
+              {/* ))} */}
           </>
-        ) */}
+        {/* ) */}
         {/* } */}
       </div>
 
       {/* Mobile Navigation */}
-      {/* <div className='sm:hidden flex relative'>
-        {session?.user ? (
-          <div className='flex'>
+      <div className='sm:hidden flex relative'>
+        {/* {session?.user ? ( */}
+          {/* <div className='flex'>
             <Image
-              src={session?.user.image}
+              // src={session?.user.image}
+              src='/assets/images/logo.svg'
               width={37}
               height={37}
               className='rounded-full'
@@ -110,7 +111,7 @@ const Nav = () => {
                   type='button'
                   onClick={() => {
                     setToggleDropdown(false);
-                    signOut();
+                    // signOut();
                   }}
                   className='mt-5 w-full black_btn'
                 >
@@ -118,25 +119,25 @@ const Nav = () => {
                 </button>
               </div>
             )}
-          </div>
-        ) : (
+          </div> */}
+        {/* ) : ( */}
           <>
-            {providers &&
-              Object.values(providers).map((provider) => (
+            {/* {providers && */}
+              {/* Object.values(providers).map((provider) => ( */}
                 <button
                   type='button'
-                  key={provider.name}
-                  onClick={() => {
-                    signIn(provider.id);
-                  }}
+                  // key={provider.name}
+                  // onClick={() => {
+                  //   signIn(provider.id);
+                  // }}
                   className='black_btn'
                 >
                   Sign in
                 </button>
-              ))}
+              {/* ))} */}
           </>
-        )}
-      </div> */}
+        {/* )} */}
+      </div>
     </nav>
   );
 };
